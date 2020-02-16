@@ -1,0 +1,34 @@
+第一课：简介
+		python是解释型语言（例php,javaScript）
+        配置python环境变量：path中添加 C:\software\software\python 以及 C:\software\software\python\Scripts
+        安装ipython：命令行输入 pip install Ipython(PS:首字母大写)（没按上，版本不对，待研究）
+第二课：Life is shot,you need python.
+		安装包下载地址：https://www.python.org/downloads/windows/
+		命令行输入dxdiag,查看系统信息
+		三种运行方式
+			命令行输入python，进入python解释器模式，建议使用ipython(简单测试时)
+			使用sublime开发工具
+				Ctrl+N:新建 Ctrl+B运行
+			命令行输入python，然后将python文件拖入运行
+第三课：python数据类型皆以对象形式，数据类型分类：
+			Fundamental对象：Type
+			Numeric对象：布尔型，浮点型，整型
+			Sequence对象：String，List，tuple
+			Internal对象：function，code，frame，module，method
+			Mapping对象：dict
+		整形： 例 a=10	type(a) #输出int
+               前缀0x——十六进制，0o——八进制，0b——二进制
+第四课：python属于弱类型，并且没有编译的过程
+        浮点数一般会有误差
+第五课：空字符串和0均认为false
+        \为转义字符，\n换行,\t制表
+第六课：标识符命名规则
+            由字母，数字，下划线组成
+            数字不能放前面
+            不能和关键字重名
+        起名建议：见名之意；驼峰命名法
+第七课：格式化输出
+第八课：算术运算符
+第九课：关系运算符
+             
+               
