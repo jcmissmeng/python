@@ -1,0 +1,70 @@
+第十一天：
+第三课：
+		模块 可重用的代码，所有的python源代码文件都可以作为模块使用
+		使用模块的方式：
+			import os     将os命名空间中的函数、变量、类拿到你自己的命名空间来
+				命名空间：
+					os.listdir()
+			from os import listdir
+            from os import *
+第四课：
+		使用自己的模块
+			sys.path定义了模块的查找目录，自己的模块可以放在其中的某个目录中，或者将模块当前的目录添加到sys.path中
+			sys.path.append("")
+第五课：
+		如果在模块中写了一些测试代码，在模块导入的时候，这些代码会立即执行
+		python中的模块不管导入多少次，但只执行一次
+		__name__在独立的文件中是__main__，作为模块导入时是模块名
+		在测试代码前加入对__name__的判断，可以让测试代码在导入时不执行
+第六课：
+		查看系统中安装的模块  sys.modules
+		在自己写得模块中的函数或者类的前面加上一些字符串说明函数的功能或者类的功能，这个就是__doc__
+		help()打印的就是__doc__
+		__all__在python2可以控制模块中被导入的函数或类，python3中不起作用
+		在模块中想让别人使用的不加_，认为 是公有的，自己使用的加_下划线，这个就是私有的，导入模块时不导入
+第七课：
+		包实际上是一个目录，里面可以放多个相关联的模块，然后导入的时候导入包就将这些模块全部导入了
+		包中一般都有一个__init__.py的文件
+		__init__.py文件的作用：初始化或者配置的作用
+
+第八课：
+		模块发布
+			setup.py文件的内容：
+				from distutils.core import setup
+				setup(name="压缩包的名字", version="1.0", description="描述", author="作者"
+					, py_modules=['suba.aa', 'suba.bb', 'subb.cc', 'subb.dd'])
+			编译模块
+				python setup.py build
+			生成压缩包
+				python setup.py sdist
+第九课：
+		模块安装
+			python setup.py install
+		默认安装目录：C:\Program Files\Python36\Lib\site-packages
+第十课：
+		列表推导式
+第十二天
+第三课：
+		
+第一课：
+		
+第一课：
+		
+第一课：
+		
+第一课：
+		
+第一课：
+		
+第一课：
+		
+第一课：
+		
+第一课：
+		
+第一课：
+		
+第一课：
+		
+第一课：
+		
