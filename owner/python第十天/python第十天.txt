@@ -1,0 +1,119 @@
+第十七天
+第二课：
+		内建函数
+			dir(__builtins__)	# 展示方法
+			range(start,stop[,step])	# 计数从start开始，默认从0开始，到stop结束，但不包括stop；每次跳跃的间距，默认为1
+			map(function,sequence[,sequence,...])	# 根据提供的函数对指定的序列做映射
+			filter(function or None,sequence)	# 对指定序列执行过滤操作
+			reduce(function,sequence[,initial])		# 对参数序列中元素进行累积
+第三课：
+		内建filter函数
+		内建reduce函数
+第四课：
+		集合：唯一无序  
+第五课：
+		functools包
+			partial函数（偏函数），设置函数默认值
+			wraps函数：消除装饰器副作用，如函数__doc__
+第六课：
+		常用标准模块；
+			builtins	--	内建函数默认加载
+			os			--	操作系统接口
+			sys			--	Python自身的运行环境
+			functools	--	常用的工具
+			json		--	编码和解码JSON对象
+			logging		--	记录日志，调试
+			multiprocessing	--	多进程
+			threading	--	多线程
+			copy		--	拷贝
+			time		--	时间
+			datetime	--	日期和时间
+			calendar	--	日历
+			hashlib		--	加密算法
+			random		--	生成随机数
+			re			--	字符串正则匹配
+			socket		--	标准的BSD Sockets API
+			shutil		--	文件和目录管理
+			glob		--	基于文件通配符搜索
+第三课：	
+		常用的第三方模块
+			requests	--	使用的是urllib3，继承了urllib2的所有特性
+			urllib		--	基于http的高层库
+			scrapy		--	爬虫
+			beautifulsoup4	--	HTML/XML的解析器
+			celery		--	分布式任务调度模块
+			redis		--	缓存
+			Pillow(PIL)	--	图像处理
+			xlsxwriter	--	仅写excle功能，支持xlsx
+			xlwt		--	仅写excle功能，支持xls，2013或更早版office
+			xlrd		--	仅写excle功能，支持xlsx
+			elasticsearch	--	全文搜索引擎
+			pymysql		--	数据库连接库
+			mongoengine/pymongo	--	mongodbpython接口
+			matplotlib	--	画图
+			numpy/scipy	--	科学计算
+			django/tornado/flask	--	web框架
+			xmltodict	--	xml转dict
+			SimpleHTTPServer	--	简单的HTTPServer，不使用Web框架
+			gevent		--	基于协程的Python网络库
+			fabric		--	系统管理
+			pandas		--	数据处理库
+			scikit-learn	--	机器学习
+第八课：
+		pdb调试
+			执行时调式
+				python -m pdb xxx.py
+			交互调试
+				import pdb
+				pdb.run('testfun(args)')
+			程序员埋点
+				import pdb
+				pdb.set_trace()
+			调试常用命令
+				break	b	设置断点
+				continue	c	继续执行程序
+				list	l	查看当前行的代码段
+				step	s	进入函数
+				return	r	执行代码直到从当前函数返回
+				quit	q	中止并退出
+				next	n	执行下一行
+				print	p	打印变量的值
+				help	h	帮助
+				args	a	查看传入参数
+				回车	重复上一条命令
+				break	b	显示所有断电
+				break lineno	b lineno	在指定行设置断点
+				break file.lineno	b file.lineno	在指定文件的行设置断点
+				clear num 删除指定断点
+				bt	查看函数调用栈帧
+第十课：
+		多进程
+			在Linux系统中，fork()函数创建进程
+		import os
+		# 在这句之后，变成两个进程
+		pid=os.fork()
+		if pid<0:
+			print("fork fail")
+		elif pid==0:
+			print("子进程ID:%s,父进程ID:%s"%(os.getpid(),os.getppid()))
+		else:
+			print("当前进程ID:%s,子进程ID:%s"%(os.getpid(),pid))
+		# 输出两遍
+		print("父子进程都要执行的代码")
+		################使用multiprocessing模块创建进程###############
+		from multiprocessing import Process
+		import os
+		def worker(name):
+			print("进程名字:%s,id:%s"%(name,os.getpid()))
+		if __name__="__main__":
+			print("主进程id:%s"%os.getpid())
+			p=Process(target=worker,args=('process1',))
+			p.start()
+			p.join()
+			print("子进程已结束")
+		参数：
+			target	--	表示这个进程实例所调用对象
+			args	--	表示调用对象的位置参数元组
+			kwargs	--	表示调用对象的关键字参数字典
+			name	--	为当前进程实例的别名
+			
